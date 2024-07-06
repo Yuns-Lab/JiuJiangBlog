@@ -1,0 +1,23 @@
+[fadeup] {
+    --start: 0s;
+    --delay: 1s;
+    --lv: 0;
+    animation: latter-slice-top 1s both;
+    animation-delay: calc(var(--lv) * var(--delay) + var(--start));
+}
+
+@for $k from 1 through 40 {
+    [fadeup-d-#{$k}] {
+        --lv: calc(#{$k} * 0.25);
+    }
+}
+
+@keyframes latter-slice-top {
+    0% {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    100% {
+        transform: none;
+    }
+}
